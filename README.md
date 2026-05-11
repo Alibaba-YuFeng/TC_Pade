@@ -62,6 +62,25 @@ python run.py \
 | `--predictor_order` | `3` | Pad&eacute; predictor order |
 | `--predictor_history_size` | `6` | Residual history buffer size |
 
+## 📊 Experimental Results
+
+### Text-to-Image: FLUX.1-dev on DrawBench
+
+| Method | Latency(s)↓ | Speed↑ | FLOPs(T)↓ | Speed↑ | CLIP↑ | Image Reward↑ | SSIM↑ | PSNR↑ | LPIPS↓ |
+|--------|-------------|--------|-----------|--------|-------|---------------|-------|-------|--------|
+| FLUX.1-dev (50 steps) | 30.46 | 1.00× | 3734.56 | 1.00× | 31.2627 | 0.9940 | 1.0000 | ∞ | 0.0000 |
+| TC-Padé (Medium) | 8.74 | 3.49× | 760.08 | 4.91× | 31.2708 | 0.9402 | 0.6908 | 29.3693 | 0.3909 |
+| TC-Padé (Fast) | 7.92 | 3.84× | 685.46 | 5.45× | 31.1870 | 0.8943 | 0.6707 | 29.2031 | 0.4182 |
+| TC-Padé (Ultra) | 7.45 | 4.08× | 611.09 | 6.11× | 31.2176 | 0.8547 | 0.6518 | 29.1051 | 0.4513 |
+
+### Text-to-Video: Wan2.1 on VBench2
+
+| Method | Latency(s)↓ | Speed↑ | FLOPs(T)↓ | Speed↑ | SSIM↑ | PSNR↑ | LPIPS↓ |
+|--------|-------------|--------|-----------|--------|-------|-------|--------|
+| Wan2.1 (50 steps) | 142.32 | 1.00× | 8494.51 | 1.00× | 1.0000 | ∞ | 0.0000 |
+| TC-Padé (Medium) | 40.54 | 3.51× | 1928.68 | 4.40× | 0.5968 | 28.6603 | 0.4895 |
+| TC-Padé (Fast) | 33.37 | 4.26× | 1436.24 | 5.91× | 0.5664 | 28.4528 | 0.5627 |
+
 ## 📄 Citation
 
 If you find this work useful, please cite:
